@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('data/conn.php');
+require_once('data/notUser.php');
 $title = 'Login';
 include('middleware/isLogged.php');
 include('interfaces/shared/head.php');
@@ -23,11 +23,11 @@ if (isset($_POST['btn_login'])) {
 
 	if (empty($errors)) {
 		//query sql
-		$sql = "SELECT * FROM users WHERE name_user = '$user';";
+		$sql = "CALL GetUser('$user');";
 		$result = mysqli_query($conn, $sql);
 
 		if ($row = mysqli_num_rows($result) > 0) {
-			while ($row = mysqli_fetch_assoc($result)) {
+			if ($row = mysqli_fetch_assoc($result)) {
 				if (password_verify($pw, $row["password"])) {
 					//criar sessoes
 					$_SESSION['isLogged'] = true;
@@ -38,7 +38,8 @@ if (isset($_POST['btn_login'])) {
 					//ir para a pagina inicial
 					echo '<script> window.location.href="/interfaces/shared/home.php"</script>';
 				} else {
-					array_push($errors, "Username or Password incorrect");
+					array_push($errors, "Password incorrect");
+					error_log("Password Incorrect \n" . $sql, 3, "/logs/logs.log");
 				}
 			}
 		} else {

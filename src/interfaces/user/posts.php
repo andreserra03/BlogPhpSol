@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/user.php');
 $title = 'Posts';
 $active_page = 'Posts';
 include('../../middleware/session.php');

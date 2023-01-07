@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/admin.php');
 $title = 'Edit User';
 $active_page = 'Users';
 include('../../middleware/session.php');
@@ -13,7 +13,7 @@ $errors = [];
 $success = [];
 
 $userId = $_GET['id'];
-$sql = "SELECT * FROM users WHERE id_user = $userId;";
+$sql = "CALL GetUserById('$userId')";
 $res = mysqli_query($conn, $sql);
 
 if ($row = mysqli_num_rows($res) > 0) {

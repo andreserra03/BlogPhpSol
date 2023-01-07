@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/admin.php');
 $title = 'Feedback';
 $active_page = 'Feedback';
 include('../../middleware/session.php');
@@ -9,7 +9,7 @@ include('../shared/head.php');
 include('../shared/sidebar.php');
 
 
-$sql = "Select feedback.*, users.* from feedback inner join users on feedback.id_user = users.id_user;";
+$sql = "CALL GetFeedback();";
 $res = mysqli_query($conn, $sql);
 $feeds = [];
 

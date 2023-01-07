@@ -10,6 +10,20 @@ services:
       - 80:80
     volumes:
       - ./src:/var/www/html/
+    env_file: .env
+    environment:
+      - DB=${DB}
+      - HOST=${HOST}
+      - DB_ROOT=${DB_ROOT}
+      - DB_ADMIN=${DB_ADMIN}
+      - DB_MANAGER=${DB_MANAGER}
+      - DB_USER=${DB_USER}
+      - DB_NOT_USER=${DB_NOT_USER}
+      - PASS_ROOT=${PASS_ROOT}
+      - PASS_ADMIN=${PASS_ADMIN}
+      - PASS_MANAGER=${PASS_MANAGER}
+      - PASS_USER=${PASS_USER}
+      - PASS_NOT_USER=${PASS_NOT_USER}
 
   db:
     image: mysql

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/admin.php');
 include('../../middleware/session.php');
 include('../../middleware/admin.php');
 
@@ -17,7 +17,7 @@ if (isset($_POST['btn_update'])) {
 	$i = htmlspecialchars($id);
 	$s = htmlspecialchars($status);
 
-	$sql2 = "UPDATE users SET name_user = '$u', role = '$r', status = '$s' WHERE id_user = '$i';";
+	$sql2 = "CALL UpdateUser('$username','$role','$status','$id')";
 
 	if ($res2 = mysqli_query($conn, $sql2)) {
 		//array_push($success, "Record was updated successfully.");

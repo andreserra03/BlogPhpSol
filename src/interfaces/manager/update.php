@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/manager.php');
 include('../../middleware/session.php');
 include('../../middleware/manager.php');
 
@@ -13,7 +13,7 @@ if (isset($_POST['btn_hide'])) {
 	} else {
 		$hide = 0;
 	}
-	$sql2 = "UPDATE posts SET hide = '$hide' WHERE id_post = '$id';";
+	$sql2 = "CALL UpdatePost('$hide','$id')";
 
 	if ($res2 = mysqli_query($conn, $sql2)) {
 		//array_push($success, "Record was updated successfully.");

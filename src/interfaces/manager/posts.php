@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/manager.php');
 $title = 'Posts';
 $active_page = 'Posts';
 include('../../middleware/session.php');
@@ -8,7 +8,7 @@ include('../../middleware/manager.php');
 include('../shared/head.php');
 include('../shared/sidebar.php');
 
-$sql = "SELECT posts.*, users.* from posts inner join users on posts.id_user = users.id_user;";
+$sql = "CALL GetPosts();";
 $res = mysqli_query($conn, $sql);
 $posts = [];
 

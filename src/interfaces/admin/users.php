@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/admin.php');
 $title = 'Edit Users';
 $active_page = 'Users';
 include('../../middleware/session.php');
@@ -9,7 +9,7 @@ include('../shared/head.php');
 include('../shared/sidebar.php');
 
 
-$sql = "Select * from users";
+$sql = "CALL GetUsers();";
 $res = mysqli_query($conn, $sql);
 
 $users = [];

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/user.php');
 include('../../middleware/session.php');
 include('../../middleware/user.php');
 
@@ -26,7 +26,7 @@ if (isset($_POST['btn_upload'])) {
 
 	// move the uploaded (temporary) file to the specified destination
 	if (move_uploaded_file($temp_name, $path_filename_ext)) {
-		$sql = "INSERT INTO feedback (message, file, id_user) VALUES ('$m', '$f', '$i')";
+		$sql = "CALL Upload('$m','$f','$i');";
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION['msg'] = "File uploaded successfully";
 			echo '<script>window.location.href="feedback.php"</script>';

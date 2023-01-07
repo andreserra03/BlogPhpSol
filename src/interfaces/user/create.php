@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/user.php');
 include('../../middleware/session.php');
 include('../../middleware/user.php');
 
-//Update User
+
 if (isset($_POST['btn_create'])) {
 
 	$title = $_POST['title_post'];
@@ -16,7 +16,7 @@ if (isset($_POST['btn_create'])) {
 	$d = htmlspecialchars($desc);
 	$i = htmlspecialchars($id_user);
 
-	$sql2 = "INSERT INTO posts(title, description, id_user, hide) VALUES('$t', '$d', '$i', 0);";
+	$sql2 = "CALL CreatePost('$t','$d','$i');";
 	if ($res2 = mysqli_query($conn, $sql2)) {
 		//array_push($success, "Record was updated successfully.");
 		$_SESSION['msg'] = "Record was updated successfully.";

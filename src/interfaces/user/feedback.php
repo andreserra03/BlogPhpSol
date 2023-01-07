@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../data/conn.php');
+include('../../data/user.php');
 $title = 'Feedback';
 $active_page = 'Feedback';
 include('../../middleware/session.php');

@@ -1,6 +1,6 @@
 <?php
-define("USER_BD", getenv('DB_ROOT'));
-define("PASS_BD", getenv('PASS_ROOT'));
+define("USER_BD", getenv('DB_ADMIN'));
+define("PASS_BD", getenv('PASS_ADMIN'));
 define("BD", getenv('DB'));
 define("HOST", getenv('HOST'));
 
