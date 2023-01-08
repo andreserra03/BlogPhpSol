@@ -38,7 +38,7 @@ if (isset($_POST['btn_registo'])) {
 
 		if (mysqli_num_rows($res) > 0) {
 			array_push($errors, "User already exists.");
-			error_log("User already exists. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
+			error_log("User already exists. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "registos/reg.log");
 		} else {
 			$res->close();
 			$conn->next_result();
@@ -48,10 +48,10 @@ if (isset($_POST['btn_registo'])) {
 
 			if (!mysqli_query($conn, $query)) {
 				array_push($errors, "Could not create account. " .$conn->error);
-				error_log("Could not create account. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
+				error_log("Could not create account. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "registos/reg.log");
 			} else {
 				$_SESSION['msg'] = "Account Created!";
-				error_log("Account Created! \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
+				error_log("Account Created! \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "registos/reg.log");
 				echo '<script> window.location.href="index.php"</script>';
 			}
 		}

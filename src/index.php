@@ -45,16 +45,16 @@ if (isset($_POST['btn_login'])) {
 					$_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
 					$_SESSION['lastaccess'] = time();
 					//ir para a pagina inicial
-					error_log("Session: \t" . $_SESSION['id_user'] .' - '. $_SESSION['user'] . "\t". date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
+					error_log("Session: \t" . $_SESSION['id_user'] .' - '. $_SESSION['user'] . "\t". date("Y-m-d h:i:sa"). "\n", 3, "registos/reg.log");
 					echo '<script> window.location.href="/interfaces/shared/home.php"</script>';
 				} else {
 					array_push($errors, "Password incorrect");
-					error_log("Password Incorrect \t" . $sql . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
+					error_log("Password Incorrect \t" . $sql . date("Y-m-d h:i:sa"). "\n", 3, "registos/reg.log");
 				}
 			}
 		} else {
 			array_push($errors, "Incorrect Data");
-			error_log("Data Incorrect \t" . $sql . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
+			error_log("Data Incorrect \t" . $sql . date("Y-m-d h:i:sa"). "\n", 3, "registos/reg.log");
 		}
 	}
 }
