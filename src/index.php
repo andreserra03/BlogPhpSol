@@ -36,14 +36,16 @@ if (isset($_POST['btn_login'])) {
 					$_SESSION['role'] = $row['role'];
 					$_SESSION['status'] = $row['status'];
 					//ir para a pagina inicial
+					error_log("Session: \t" . $_SESSION['id_user'] .' - '. $_SESSION['user'] . "\t". date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 					echo '<script> window.location.href="/interfaces/shared/home.php"</script>';
 				} else {
 					array_push($errors, "Password incorrect");
-					error_log("Password Incorrect \n" . $sql, 3, "/logs/logs.log");
+					error_log("Password Incorrect \t" . $sql . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 				}
 			}
 		} else {
 			array_push($errors, "Incorrect Data");
+			error_log("Data Incorrect \t" . $sql . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 		}
 	}
 }
@@ -68,8 +70,11 @@ if (isset($_POST['btn_login'])) {
 			<div class="mt-3 text-center">
 				<a href="registo.php">Registar</a>
 				<hr>
-				<?php echo $_SESSION["msg"];
-				$_SESSION["msg"] = ''; ?>
+				<?php if (isset($_SESSION["msg"]))
+				{
+					echo $_SESSION["msg"]; 
+					$_SESSION["msg"] = '';
+				} ?>
 			</div>
 		</form>
 	</div>

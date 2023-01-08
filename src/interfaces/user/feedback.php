@@ -7,6 +7,8 @@ include('../../middleware/session.php');
 include('../../middleware/user.php');
 include('../shared/head.php');
 include('../shared/sidebar.php');
+
+//echo exec('whoami');
 ?>
 
 <div class="container mt-5">

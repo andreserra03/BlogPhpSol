@@ -12,7 +12,7 @@ if (isset($_POST['btn_upload'])) {
 	$i = htmlspecialchars($id);
 
 	// destination of the file on the server
-	$destination = '../../uploads/';
+	$destination = '/uploads/';
 	// name of the uploaded file
 	$file = $_FILES["fileName"]["name"];
 	$path = pathinfo($file);

@@ -23,7 +23,7 @@ if (isset($_POST['btn_registo'])) {
 	$number = preg_match('@[0-9]@', $pw);
 	$specialChars = preg_match('@[^\w]@', $pw);
 
-	if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($pw) <= 8) {
+	if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($pw) < 8) {
 		array_push($errors, "Password should be at least 8 characters in length 
 		and should include at least one upper case letter, one number, and one special character.");
 	}
@@ -34,6 +34,7 @@ if (isset($_POST['btn_registo'])) {
 
 		if (mysqli_num_rows($res) > 0) {
 			array_push($errors, "User already exists.");
+			error_log("User already exists. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 		} else {
 			//encriptacao de password
 			$cry = password_hash($pw, PASSWORD_DEFAULT);
@@ -41,8 +42,10 @@ if (isset($_POST['btn_registo'])) {
 
 			if (!mysqli_query($conn, $query)) {
 				array_push($errors, "Could not create account.");
+				error_log("Could not create account. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 			} else {
 				$_SESSION['msg'] = "Account Created!";
+				error_log("Account Created! \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 				echo '<script> window.location.href="index.php"</script>';
 			}
 		}
