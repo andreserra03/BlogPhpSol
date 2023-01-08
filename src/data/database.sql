@@ -47,28 +47,28 @@ INSERT INTO feedback (message, file, id_user) VALUES (message, file, idUser);;
 
 DELIMITER ;
 
-DROP USER 'blog_not_user'@'%';
+DROP USER IF EXISTS 'blog_not_user'@'%';
 flush privileges;
 CREATE USER 'blog_not_user'@'%' IDENTIFIED BY 'nq82K!$a';
 GRANT SELECT ON blog.* TO 'blog_not_user'@'%';
 GRANT EXECUTE ON PROCEDURE blog.GetUser TO 'blog_not_user'@'%';
 GRANT EXECUTE ON PROCEDURE blog.InsertUser TO 'blog_not_user'@'%';
 
-DROP USER 'blog_user'@'%';
+DROP USER IF EXISTS 'blog_user'@'%';
 flush privileges;
 CREATE USER 'blog_user'@'%' IDENTIFIED BY 'fq!11N#Q0';
 GRANT SELECT ON blog.* TO 'blog_user'@'%';
 GRANT EXECUTE ON PROCEDURE blog.CreatePost TO 'blog_user'@'%';
 GRANT EXECUTE ON PROCEDURE blog.Upload TO 'blog_user'@'%';
 
-DROP USER 'blog_manager'@'%';
+DROP USER IF EXISTS 'blog_manager'@'%';
 flush privileges;
 CREATE USER 'blog_manager'@'%' IDENTIFIED BY 'T!mq86$anH';
 GRANT SELECT ON blog.* TO 'blog_manager'@'%';
 GRANT EXECUTE ON PROCEDURE blog.GetPosts TO 'blog_manager'@'%';
 GRANT EXECUTE ON PROCEDURE blog.UpdatePost TO 'blog_manager'@'%';
 
-DROP USER 'blog_admin'@'%';
+DROP USER IF EXISTS 'blog_admin'@'%';
 flush privileges;
 CREATE USER 'blog_admin'@'%' IDENTIFIED BY 'jk1!K8$Mb';
 GRANT SELECT ON blog.* TO 'blog_admin'@'%';
