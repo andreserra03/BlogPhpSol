@@ -24,7 +24,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 ### Get project frpm github
-cd var/www/html
+cd /var/www/html
 sudo git clone https://github.com/andreserra03/BlogPhpSol.git
 sudo chmod 777 /var/www/html -R
 sudo ln -s /var/www/html/BlogPhpSol ~/Desktop/
