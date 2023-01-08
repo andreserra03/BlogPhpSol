@@ -1,6 +1,10 @@
 <?php
 session_start();
-require_once('data/conn.php');
+ini_set ('error_reporting', E_ALL);
+ini_set ('display_errors', 'on');
+ini_set ('log_errors', 'on');
+ini_set ('display_startup_errors', 'on');
+require_once('data/notUser.php');
 $title = 'Registo';
 include('middleware/isLogged.php');
 include('interfaces/shared/head.php');

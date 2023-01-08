@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('../../middleware/preventSession.php');
 include('../../data/manager.php');
 $title = 'Posts';
 $active_page = 'Posts';

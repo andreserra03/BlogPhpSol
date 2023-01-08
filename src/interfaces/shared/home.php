@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('../../middleware/preventSession.php');
 include('../../data/conn.php');
 $title = 'Home';
 $active_page = 'Home';

@@ -1,5 +1,10 @@
 <?php
 session_start();
+ini_set ('error_reporting', E_ALL);
+ini_set ('display_errors', 'on');
+ini_set ('log_errors', 'on');
+ini_set ('display_startup_errors', 'on');
+
 require_once('data/notUser.php');
 $title = 'Login';
 include('middleware/isLogged.php');
@@ -35,6 +40,10 @@ if (isset($_POST['btn_login'])) {
 					$_SESSION['user'] = $row['name_user'];
 					$_SESSION['role'] = $row['role'];
 					$_SESSION['status'] = $row['status'];
+					//session id prevention
+					$_SESSION['ipaddress'] = $_SERVER['REMOTE_ADDR'];
+					$_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
+					$_SESSION['lastaccess'] = time();
 					//ir para a pagina inicial
 					error_log("Session: \t" . $_SESSION['id_user'] .' - '. $_SESSION['user'] . "\t". date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 					echo '<script> window.location.href="/interfaces/shared/home.php"</script>';

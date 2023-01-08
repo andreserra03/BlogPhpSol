@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('../../middleware/preventSession.php');
 include('../../data/user.php');
 include('../../middleware/session.php');
 include('../../middleware/user.php');

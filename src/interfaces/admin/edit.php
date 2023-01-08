@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('../../middleware/preventSession.php');
 include('../../data/admin.php');
 $title = 'Edit User';
 $active_page = 'Users';
