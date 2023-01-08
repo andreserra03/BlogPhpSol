@@ -33,19 +33,21 @@ if (isset($_POST['btn_registo'])) {
 	}
 
 	if (empty($errors)) {
-		$query = "SELECT id_user from users WHERE name_user='$user';";
+		$query = "CALL GetUser('$user');";
 		$res = mysqli_query($conn, $query);
 
 		if (mysqli_num_rows($res) > 0) {
 			array_push($errors, "User already exists.");
 			error_log("User already exists. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 		} else {
+			$res->close();
+			$conn->next_result();
 			//encriptacao de password
 			$cry = password_hash($pw, PASSWORD_DEFAULT);
-			$query = "INSERT INTO users (name, name_user, password, role, status) VALUES ('$name', '$user', '$cry', 'User', 1);";
+			$query = "CALL InsertUser('$name', '$user', '$cry');";
 
 			if (!mysqli_query($conn, $query)) {
-				array_push($errors, "Could not create account.");
+				array_push($errors, "Could not create account. " .$conn->error);
 				error_log("Could not create account. \t" . $query . date("Y-m-d h:i:sa"). "\n", 3, "logs/reg.log");
 			} else {
 				$_SESSION['msg'] = "Account Created!";
