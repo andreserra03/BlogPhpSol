@@ -1,0 +1,48 @@
+Data Incorrect 	CALL GetUser('a' or '1=1');2023-01-08 05:21:49pm
+Session: 	3 - Anton	2023-01-08 05:22:33pm
+User already exists. 	SELECT id_user from users WHERE name_user='Anton';2023-01-08 05:27:01pm
+Account Created! 	INSERT INTO users (name, name_user, password, role, status) VALUES ('afaf', 'Tests', '$2y$10$23ukF6YAT4S6ayb16mfXl.FpwWvJHjE/Gl8q9bLoSvRErPts16B0q', 'User', 1);2023-01-08 05:29:09pm
+Session: 	3 - Anton	2023-01-08 06:46:41pm
+Session: 	3 - Anton	2023-01-08 06:46:57pm
+Could not create account. 	INSERT INTO users (name, name_user, password, role, status) VALUES ('safa', 'gwegw', '$2y$10$0pcWOVRcBzE1N.Ok0w8jJOpm7QSR7qv2N/W9Zi5fWDZv1kOUmlqwO', 'User', 1);2023-01-08 07:01:32pm
+Data Incorrect 	CALL GetUser('a' or '1=1');2023-01-08 07:05:30pm
+Session: 	3 - Anton	2023-01-08 07:17:54pm
+Could not create account. 	INSERT INTO users (name, name_user, password, role, status) VALUES ('fqwfq', 'gewfgweg', '$2y$10$nwBi8IxAyi8wLt5ZkBmgXeQ1zWWDpiv4bQISsQxDK1w/C1Ya13e/K', 'User', 1);2023-01-08 07:19:07pm
+Account Created! 	INSERT INTO users (name, name_user, password, role, status) VALUES ('fqwfq', 'gewfgweg', '$2y$10$ufViLnrVErl06AxzyXpLv.PtJU00lHhX3c1kgh/GkbYqa3O4F6AZm', 'User', 1);2023-01-08 07:20:07pm
+Session: 	3 - Anton	2023-01-08 07:36:51pm
+Session: 	3 - Anton	2023-01-08 08:02:06pm
+Session: 	2 - Manager	2023-01-08 08:02:38pm
+Data Incorrect 	CALL GetUser('Admin');2023-01-08 09:05:35pm
+Password Incorrect 	CALL GetUser('Admin');2023-01-08 09:17:32pm
+Could not create account. 	CALL InsertUser('GREE', 'gege', '$2y$10$ly0JWLjcV61blB9j8SiZG.N2XUqpDXWm2QbNLpIr63hZl6uYawnsm');2023-01-08 09:17:48pm
+Could not create account. 	CALL InsertUser('GREE', 'gege', '$2y$10$zWaCG53UHFzok.a2mqj4tukXIy0BtUejAVcJ/FYZYZdB4dkGkO6Xu');2023-01-08 09:18:09pm
+Could not create account. 	CALL InsertUser('GREE', 'gege', '$2y$10$Z3ME7h8xoWXGu/e2jBXL5Ond9XpTGbDgQJQT1XnITqfNr2/r.mYq6');2023-01-08 09:18:11pm
+Could not create account. 	CALL InsertUser('GREE', 'gege', '$2y$10$CVe7oUm9bAe2Bu9cN6Qfre0zvRF7/QN/Y7NQGljeuvswAbexlrzlm');2023-01-08 09:19:46pm
+Could not create account. 	CALL InsertUser('GREE', 'gege', '$2y$10$FDS6JuUNcjECJB1jPPfuAeiY/tAIq1kUz4IGYa9Z91Q8.OTvnz92q');2023-01-08 09:21:49pm
+Could not create account. 	CALL InsertUser('GREE', 'gege', '$2y$10$WexPmvQI25JDyxS8PmiwMuxhPV/Q3b7iUl44MGdzfVENdPV5ZyS5a');2023-01-08 09:21:52pm
+Could not create account. 	CALL InsertUser('wfew', 'fwefe', '$2y$10$Vxl5hrNVuxYSIUPZnveCiutN8x7K3j4pohwmYiVNeXPFqwyTcVJ/O');2023-01-08 09:22:08pm
+Account Created! 	CALL InsertUser('wfew', 'fwefe', '$2y$10$OX5E69FdV6S8rZjP6tFhj.Pts/fle3wGn3YenPPRDszX/ceETb9cS');2023-01-08 09:22:44pm
+Account Created! 	CALL InsertUser('ewgew', 'hrttr', '$2y$10$mLFoUB2bW8eDJ.plrwdFBe82wGyLS9eQV7fs0C.hWnQmuPPLs/5fG');2023-01-08 09:22:58pm
+Account Created! 	CALL InsertUser('gweg', 'htrr', '$2y$10$7hZFfj4NrjYUzRZrDJPvg.vQ.mxzOPstmwd6faSoRMlM/xUetXWvu');2023-01-08 09:24:00pm
+Password Incorrect 	CALL GetUser('Anton');2023-01-08 09:26:02pm
+Password Incorrect 	CALL GetUser('Anton');2023-01-08 09:26:13pm
+Password Incorrect 	CALL GetUser('Anton');2023-01-08 09:28:15pm
+Password Incorrect 	CALL GetUser('Anton');2023-01-08 09:28:19pm
+Password Incorrect 	CALL GetUser('Anton');2023-01-08 09:28:27pm
+Password Incorrect 	CALL GetUser('Admin');2023-01-08 09:29:18pm
+Password Incorrect 	CALL GetUser('Admin');2023-01-08 09:29:26pm
+Account Created! 	CALL InsertUser('Manuel', 'Manager', '$2y$10$CCIvTP21KJhQLcXKd/bu.Om5D54nASQFSf8HFap5kxdZxv21SmlA2');2023-01-08 09:30:53pm
+Session: 	9 - Manager	2023-01-08 09:30:58pm
+Password Incorrect 	CALL GetUser('Admin');2023-01-08 09:31:21pm
+Account Created! 	CALL InsertUser('Tonnill', 'Admin', '$2y$10$3UT8TNlUIcerVFFlk7oTiuQwxVFjixdeMITqBsjsR4Mlk57auzuvO');2023-01-08 09:32:40pm
+Account Created! 	CALL InsertUser('Antonill', 'Anton', '$2y$10$TAxYKsJz21hGPxhwDJHgA.eDxObrJAHOjpj57h.jmmOdi2l/zLbny');2023-01-08 09:33:19pm
+Account Created! 	CALL InsertUser('Mary', 'Maary', '$2y$10$zzaFHsOceaBKFb.oI3IjQ.7iDCitbtbWWiOQBRQOjda4Yag43b1.W');2023-01-08 09:33:43pm
+Data Incorrect 	CALL GetUser('Admin');2023-01-08 09:35:20pm
+Session: 	1 - Admin	2023-01-08 09:36:37pm
+Session: 	2 - Manager	2023-01-08 09:37:32pm
+Session: 	3 - Anton	2023-01-08 09:37:40pm
+Session: 	4 - Maary	2023-01-08 09:37:51pm
+Session: 	3 - Anton	2023-01-08 09:39:51pm
+Session: 	2 - Manager	2023-01-08 09:47:20pm
+Session: 	1 - Admin	2023-01-08 09:47:37pm
+Session: 	3 - Anton	2023-01-08 10:05:32pm
